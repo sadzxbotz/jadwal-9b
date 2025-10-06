@@ -3,76 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Jadwal Pelajaran</title>
+    <title>Jadwal Pelajaran Minimalis Hujan</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Gaya Khusus untuk Halaman Menu */
-        
-        /* 1. PENYESUAIAN JARAK JUDUL DAN GRID */
-        .header-content {
-            margin-bottom: 5px; /* Kurangi jarak bawah header */
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px 40px; /* Kurangi padding atas dan bawah */
-        }
-        /* ---------------------------------- */
-
-        .nav-button {
-            font-family: 'Boogaloo', cursive;
-            background-color: #ff9800;
-            color: white;
-            padding: 25px 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.5em;
-            box-shadow: 6px 6px 0px #e65100;
-            transition: all 0.2s;
-            border: 2px solid #333;
-        }
-        .nav-button:hover {
-            /* Efek hover dipindahkan ke style.css agar konsisten */
-        }
-
-        /* 2. PENYESUAIAN MOBILE (HP) */
-        @media (max-width: 768px) {
-            .schedule-container {
-                padding: 10px; /* Padding kontainer lebih kecil di HP */
-            }
-            .title {
-                font-size: 2em; /* Judul lebih kecil di HP */
-                margin: 5px 0 10px 0;
-            }
-            .menu-grid {
-                grid-template-columns: 1fr; /* 1 kolom di HP */
-                padding: 10px; /* Padding grid lebih kecil di HP */
-                gap: 15px;
-            }
-            .nav-button {
-                padding: 20px 10px; /* Ukuran tombol lebih ringkas di HP */
-                font-size: 1.3em;
-            }
-        }
-    </style>
 </head>
 <body>
     <div id="rain-effect"></div> 
     <div class="schedule-container">
         <div class="header-content">
-            <div class="badge">Jadwal Minggu Ini</div>
-            <h1 class="title">PILIH HARI</h1>
+            <div class="badge">LET'S DO OUR BEST</div>
+            <h1 class="title">JADWAL PELAJARAN</h1>
+            <div class="decor top-right"></div>
         </div>
         
-        <div class="menu-grid">
-            <a href="senin.html" class="nav-button" style="background-color: #ffe082; box-shadow: 6px 6px 0px #e0c874;">SENIN</a>
-            <a href="selasa.html" class="nav-button" style="background-color: #ffab91; box-shadow: 6px 6px 0px #e09681;">SELASA</a>
-            <a href="rabu.html" class="nav-button" style="background-color: #ff8a80; box-shadow: 6px 6px 0px #e07a6a;">RABU</a>
-            <a href="kamis.html" class="nav-button" style="background-color: #c5e1a5; box-shadow: 6px 6px 0px #a4c489;">KAMIS</a>
-            <a href="jumat.html" class="nav-button" style="background-color: #81d4fa; box-shadow: 6px 6px 0px #73b3d1;">JUMAT</a>
-            <a href="sabtu.html" class="nav-button" style="background-color: #b39ddb; box-shadow: 6px 6px 0px #9480b5;">SABTU</a>
+        <div class="schedule-grid">
+            <div class="day-card monday">
+                <div class="tape yellow"></div>
+                <h2>SENIN</h2>
+                <div class="lessons">
+                    <p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p>
+                </div>
+            </div>
+            <div class="day-card tuesday"><div class="tape orange"></div><h2>SELASA</h2><div class="lessons"><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p></div></div>
+            <div class="day-card wednesday"><div class="tape red"></div><h2>RABU</h2><div class="lessons"><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p></div></div>
+            <div class="day-card thursday"><div class="tape green"></div><h2>KAMIS</h2><div class="lessons"><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p></div></div>
+            <div class="day-card friday"><div class="tape blue"></div><h2>JUMAT</h2><div class="lessons"><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p></div></div>
+            <div class="day-card saturday"><div class="tape purple"></div><h2>SABTU</h2><div class="lessons"><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p><p class="lesson-slot"></p></div></div>
+        </div>
+        
+        <div class="footer-decor">
+            <div class="decor bottom-left"></div>
+            <div class="decor student-char"></div>
         </div>
     </div>
 </body>
