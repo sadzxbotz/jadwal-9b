@@ -3,14 +3,17 @@
 
 body {
     font-family: 'Kalam', cursive;
-    background-color: #f8f7f2; /* Putih Krem */
+    /* --- PERUBAHAN WARNA LATAR BELAKANG --- */
+    background-color: #e0f7fa; /* Warna Biru Langit/Mint yang lembut */
+    background-image: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%); /* Gradasi lembut */
+    /* -------------------------------------- */
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Penting untuk efek hujan */
+    overflow: hidden; 
     position: relative;
 }
 
@@ -18,41 +21,30 @@ body {
 .schedule-container {
     background-color: transparent;
     padding: 30px;
-    border-radius: 15px;
     max-width: 1200px;
     width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    z-index: 10; /* Pastikan konten di atas efek hujan */
+    z-index: 10; 
+    /* Hilangkan box-shadow pada container, biarkan di kartu saja */
 }
 
 /* Judul */
 .title {
     font-family: 'Boogaloo', cursive;
-    font-size: 3em;
-    color: #ff6f61; /* Warna merah muda/coral untuk judul */
+    font-size: 3.5em; /* Sedikit lebih besar */
+    color: #ff6f61; 
     text-align: center;
     margin: 10px 0 30px 0;
-    text-shadow: 2px 2px 0px #fff, 4px 4px 0px #ffccbc; /* Efek tebal/lucu */
+    text-shadow: 3px 3px 0px #fff, 6px 6px 0px #ffccbc;
+    line-height: 1;
 }
 
 /* Grid Jadwal */
 .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
-    gap: 30px;
+    /* Ubah ke 3 kolom agar lebih rapi di desktop */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
     margin-bottom: 40px;
-}
-
-/* Sesuaikan grid untuk layar kecil */
-@media (max-width: 1000px) {
-    .schedule-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 600px) {
-    .schedule-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Kartu Hari */
@@ -62,8 +54,13 @@ body {
     padding: 15px;
     border-radius: 10px;
     position: relative;
-    box-shadow: 5px 5px 0px #ccc;
-    height: 250px; /* Tinggi kartu */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1); /* Shadow yang lebih halus */
+    height: 250px; 
+    transition: transform 0.3s ease; /* Efek hover kecil */
+}
+
+.day-card:hover {
+    transform: translateY(-3px);
 }
 
 .day-card h2 {
@@ -80,11 +77,11 @@ body {
 }
 .lesson-slot {
     border-bottom: 1px dashed #ccc;
-    height: 35px; /* Tinggi baris */
+    height: 35px;
     margin: 5px 0;
 }
 
-/* Dekorasi seperti Lakban (Tape) */
+/* Dekorasi Lakban (Tape) */
 .tape {
     position: absolute;
     top: -10px;
@@ -95,19 +92,18 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     z-index: 20;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.tape.yellow { background-color: #ffe082; }
-.tape.orange { background-color: #ffab91; }
-.tape.red { background-color: #ff8a80; }
-.tape.green { background-color: #c5e1a5; }
-.tape.blue { background-color: #81d4fa; }
+.tape.yellow { background-color: #ffeb3b; }
+.tape.orange { background-color: #ffab40; }
+.tape.red { background-color: #ff5252; }
+.tape.green { background-color: #c8e6c9; }
+.tape.blue { background-color: #80d8ff; }
 .tape.purple { background-color: #b39ddb; }
 
 
 /* Efek Hujan CSS Halus */
-/* --- */
-
 #rain-effect {
     position: fixed;
     top: 0;
@@ -119,45 +115,42 @@ body {
         /* Lapisan 1: Tetesan lebih gelap, cepat */
         repeating-linear-gradient(
             45deg, 
-            rgba(0, 0, 0, 0.1), 
-            rgba(0, 0, 0, 0.1) 1px, 
+            rgba(0, 0, 0, 0.05), /* Lebih transparan agar halus */
+            rgba(0, 0, 0, 0.05) 1px, 
             transparent 1px, 
             transparent 80px
         ),
         /* Lapisan 2: Tetesan lebih terang, lambat */
         repeating-linear-gradient(
             45deg, 
-            rgba(255, 255, 255, 0.2), 
-            rgba(255, 255, 255, 0.2) 2px, 
+            rgba(255, 255, 255, 0.1), /* Lebih transparan agar halus */
+            rgba(255, 255, 255, 0.1) 2px, 
             transparent 2px, 
             transparent 100px
         );
     
-    background-size: 100px 1000px, 150px 1500px; /* Ukuran lapisan tetesan */
-    animation: rain-fall 1.5s linear infinite; /* Animasi turun */
-    z-index: 1; /* Di bawah konten utama */
-    pointer-events: none; /* Agar tidak menghalangi interaksi */
+    background-size: 100px 1000px, 150px 1500px; 
+    animation: rain-fall 1.5s linear infinite; 
+    z-index: 1; 
+    pointer-events: none; 
 }
 
-/* Keyframes Animasi Turun Hujan */
+/* Keyframes Animasi Turun Hujan (Tidak Berubah) */
 @keyframes rain-fall {
     0% {
         background-position: 0 0, 0 0;
     }
     100% {
-        /* Geser kedua lapisan ke bawah (dan sedikit ke samping untuk efek sudut) */
         background-position: 80px 1000px, 120px 1500px;
     }
 }
 
-/* --- */
-/* Gaya Tambahan (Badge, Dekorasi) - *Sederhana, tanpa gambar* */
-
+/* Dekorasi (Disederhanakan) */
 .badge {
     font-family: 'Boogaloo', cursive;
     background-color: #f7b731;
     color: white;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 50%;
     border: 3px solid #ffde54;
     width: 100px;
@@ -167,33 +160,68 @@ body {
     align-items: center;
     text-align: center;
     box-shadow: 2px 2px 0px #b87b0e;
+    font-size: 0.9em;
 }
-
 .header-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
     position: relative;
+    padding: 10px 0;
 }
-
-.decor {
-    width: 50px;
-    height: 150px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    position: relative;
-    background: #fff;
-}
+.decor { display: none; }
 .decor.top-right {
-    background-image: linear-gradient(to top, #fff 50%, #f0f0f0 50%);
-    background-size: 100% 10px;
-    height: 80px;
+    display: block; /* Tampilkan lagi sebagai dekorasi buku/notes */
+    background: #ffffff;
+    border: 2px solid #333;
     width: 60px;
+    height: 80px;
+    border-radius: 5px;
     box-shadow: -5px 5px 0px #ccc;
     transform: rotate(5deg);
 }
 
-.decor.bottom-left, .decor.student-char {
-    display: none; /* Sederhanakan, atau ganti dengan CSS art/SVG */
+
+/* === PERATURAN RESPONSIVE UNTUK HP (MOBILE) === */
+/* Menggunakan Media Query untuk layar <= 768px */
+
+@media (max-width: 768px) {
+    
+    .schedule-container {
+        padding: 10px; /* Kurangi padding di HP */
+    }
+
+    .title {
+        font-size: 2.5em; /* Perkecil judul */
+        margin-top: 20px;
+    }
+
+    /* Grid jadwal di HP menjadi 1 kolom */
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 20px; /* Kurangi jarak antar kartu */
+    }
+
+    /* Kartu Hari di HP */
+    .day-card {
+        height: auto; /* Biarkan tinggi menyesuaikan konten */
+        min-height: 220px;
+    }
+
+    /* Atur tampilan header di HP */
+    .header-content {
+        flex-direction: column; /* Susun badge, judul, dan dekorasi vertikal */
+        text-align: center;
+    }
+    
+    .badge {
+        order: -1; /* Pindahkan badge ke atas */
+        margin-bottom: 10px;
+    }
+    
+    .decor.top-right {
+        display: none; /* Sembunyikan dekorasi tambahan di HP */
+    }
+
 }
