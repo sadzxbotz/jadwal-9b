@@ -13,7 +13,7 @@ body {
     position: relative;
 
     /* --- PERUBAHAN UNTUK BACKGROUND GAMBAR --- */
-    background: url('https://files.catbox.moe/4kjag4.jpg') no-repeat center center fixed; /* Ganti 'background-image.jpg' dengan nama file gambar Anda */
+    background: url('https://files.catbox.moe/v1lsi4.jpg') no-repeat center center fixed; /* Ganti 'background-image.jpg' dengan nama file gambar Anda */
     background-size: cover; /* Pastikan gambar mengisi seluruh layar */
     /* Opsional: Tambahkan overlay gelap/terang agar teks tetap terbaca */
     background-color: rgba(0, 0, 0, 0.4); /* Contoh overlay gelap 40% */
