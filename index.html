@@ -7,33 +7,53 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Gaya Khusus untuk Halaman Menu */
+        
+        /* 1. PENYESUAIAN JARAK JUDUL DAN GRID */
+        .header-content {
+            margin-bottom: 5px; /* Kurangi jarak bawah header */
+        }
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 40px;
+            padding: 20px 40px; /* Kurangi padding atas dan bawah */
         }
+        /* ---------------------------------- */
+
         .nav-button {
             font-family: 'Boogaloo', cursive;
-            background-color: #ff9800; /* Oranye Terang */
+            background-color: #ff9800;
             color: white;
             padding: 25px 15px;
             border-radius: 12px;
             text-decoration: none;
             text-align: center;
             font-size: 1.5em;
-            box-shadow: 6px 6px 0px #e65100; /* Efek 3D */
+            box-shadow: 6px 6px 0px #e65100;
             transition: all 0.2s;
             border: 2px solid #333;
         }
         .nav-button:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 4px 4px 0px #e65100;
+            /* Efek hover dipindahkan ke style.css agar konsisten */
         }
 
+        /* 2. PENYESUAIAN MOBILE (HP) */
         @media (max-width: 768px) {
+            .schedule-container {
+                padding: 10px; /* Padding kontainer lebih kecil di HP */
+            }
+            .title {
+                font-size: 2em; /* Judul lebih kecil di HP */
+                margin: 5px 0 10px 0;
+            }
             .menu-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 1 kolom di HP */
+                padding: 10px; /* Padding grid lebih kecil di HP */
+                gap: 15px;
+            }
+            .nav-button {
+                padding: 20px 10px; /* Ukuran tombol lebih ringkas di HP */
+                font-size: 1.3em;
             }
         }
     </style>
@@ -47,12 +67,12 @@
         </div>
         
         <div class="menu-grid">
-            <a href="senin.html" class="nav-button" style="background-color: #ffe082;">SENIN</a>
-            <a href="selasa.html" class="nav-button" style="background-color: #ffab91;">SELASA</a>
-            <a href="rabu.html" class="nav-button" style="background-color: #ff8a80;">RABU</a>
-            <a href="kamis.html" class="nav-button" style="background-color: #c5e1a5;">KAMIS</a>
-            <a href="jumat.html" class="nav-button" style="background-color: #81d4fa;">JUMAT</a>
-            <a href="sabtu.html" class="nav-button" style="background-color: #b39ddb;">SABTU</a>
+            <a href="senin.html" class="nav-button" style="background-color: #ffe082; box-shadow: 6px 6px 0px #e0c874;">SENIN</a>
+            <a href="selasa.html" class="nav-button" style="background-color: #ffab91; box-shadow: 6px 6px 0px #e09681;">SELASA</a>
+            <a href="rabu.html" class="nav-button" style="background-color: #ff8a80; box-shadow: 6px 6px 0px #e07a6a;">RABU</a>
+            <a href="kamis.html" class="nav-button" style="background-color: #c5e1a5; box-shadow: 6px 6px 0px #a4c489;">KAMIS</a>
+            <a href="jumat.html" class="nav-button" style="background-color: #81d4fa; box-shadow: 6px 6px 0px #73b3d1;">JUMAT</a>
+            <a href="sabtu.html" class="nav-button" style="background-color: #b39ddb; box-shadow: 6px 6px 0px #9480b5;">SABTU</a>
         </div>
     </div>
 </body>
